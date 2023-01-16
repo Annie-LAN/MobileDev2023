@@ -1,11 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, StyleSheet, Text, View, FlatList } from 'react-native';
 
 export default function App() {
+  const[song, setSong] = useState([
+    {name: "Party in the USA" , artist: "Miley Cyrus" , key: '1'},
+    {name: 'Bohemian Rhapsody' , artist: 'Queen' , key: '2' },
+    {name: 'Baby' , artist: 'Justin Bieber' , key: '3' }
+
+  ]);
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <FlatList 
+        data={song}
+        renderItem={({ item }) => (
+          <Text style={styles.songDisplay}>{item.song} {item.artist}</Text>
+
+        )}
+      
+      
+      />
     </View>
   );
 }
@@ -17,4 +31,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  songDisplay: {
+    marginTop: 30,
+    padding: 30,
+    backgroundColor: 'green',
+    fontSize: 24
+  }
 });
+
