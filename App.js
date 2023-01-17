@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, View, FlatList } from 'react-native';
+import { Button, StyleSheet, Text, SafeAreaView, FlatList } from 'react-native';
+import Song from './components/song'
 
 export default function App() {
   const[song, setSong] = useState([
@@ -10,17 +11,18 @@ export default function App() {
 
   ]);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+
       <FlatList 
         data={song}
         renderItem={({ item }) => (
-          <Text style={styles.songDisplay}>{item.song} {item.artist}</Text>
+          <Song song={item.name} artist={item.artist} />
 
         )}
       
       
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
