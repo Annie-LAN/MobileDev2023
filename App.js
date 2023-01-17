@@ -1,15 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, Text, SafeAreaView, FlatList } from 'react-native';
 import Song from './components/song'
 
 export default function App() {
-  const[song, setSong] = useState([
-    {name: "Party in the USA" , artist: "Miley Cyrus" , key: '1'},
-    {name: 'Bohemian Rhapsody' , artist: 'Queen' , key: '2' },
-    {name: 'Baby' , artist: 'Justin Bieber' , key: '3' }
+  const[song, setSong] = useState([]);
 
-  ]);
+  useEffect(() => {
+    setSong([{name: "Party in the USA" , artist: "Miley Cyrus" , key: '1'},
+    {name: 'Bohemian Rhapsody' , artist: 'Queen' , key: '2' },
+    {name: 'Baby' , artist: 'Justin Bieber' , key: '3' }])
+  }, [])
+
   return (
     <SafeAreaView style={styles.container}>
 
