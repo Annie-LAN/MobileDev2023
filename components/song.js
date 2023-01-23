@@ -4,7 +4,7 @@ let Song = ({song, artist}) => {
 
     return (
         <View style={styles.body}>
-            <Text>{song}</Text>
+            <Text style={styles.song}>{song}</Text>
             <Text>{artist}</Text>
         </View>
     )
@@ -13,7 +13,13 @@ let Song = ({song, artist}) => {
 const styles = StyleSheet.create({
     body: {
         backgroundColor: 'lightgray',
-        marginBottom: 20
+        marginBottom: 20  
+    },
+    song: {
+        // fontSize: "1rem",
+        // fontWeight: 1.5,
+        // lineHeight: 1.5,
+        color: "#2723DF"
     }
 })
 
