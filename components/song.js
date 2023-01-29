@@ -4,22 +4,39 @@ let Song = ({song, artist}) => {
 
     return (
         <View style={styles.body}>
-            <Text style={styles.song}>{song}</Text>
-            <Text>{artist}</Text>
+            <Text style={styles.title}>{song}</Text>
+            <Text style={styles.artist}>{artist}</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     body: {
-        backgroundColor: 'lightgray',
-        marginBottom: 20  
+        backgroundColor: "#999041",
+
+        //marginBottom: 20  
     },
-    song: {
-        // fontSize: "1rem",
-        // fontWeight: 1.5,
-        // lineHeight: 1.5,
-        color: "#2723DF"
+    // song: {
+    //     // fontSize: "1rem",
+    //     // fontWeight: 1.5,
+    //     // lineHeight: 1.5,
+    //     color: "#2723DF"
+    // }, 
+    title: {
+        marginTop: 30,
+        marginLeft: 30,
+        padding: 30,
+        fontSize: 30,
+        color: "#384AEC",
+        lineHeight: 30,
+    },
+    artist: {
+        marginTop: 3,
+        marginLeft: 30,
+        padding: 20,
+        fontSize: 20,
+        color: "#000000",
+        lineHeight: 20,
     }
 })
 
