@@ -28,8 +28,8 @@ export default function App() {
       
       <FlatList 
         data={song}
-        renderItem={({ item }) => (
-          <Song song={item.name} artist={item.artist} />
+        renderItem={({ index, item }) => (
+          <Song song={item.name} artist={item.artist} index={index}/>
 
         )}
       
@@ -42,7 +42,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#999041',
+    backgroundColor: '#FFD4A9',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 8,
     fontSize: 25,
-    color: "#384AEC",
-    backgroundColor: "#92B195"
+    color: "#000010",
+    backgroundColor: "#FFE78F"
   }
 });
 
