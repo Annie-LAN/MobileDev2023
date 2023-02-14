@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, Text, SafeAreaView, View, FlatList } from 'react-native';
 import Song from './components/song'
+import { useFonts } from 'expo-font';
 
 export default function App() {
   const[song, setSong] = useState([]);
@@ -36,6 +37,26 @@ export default function App() {
       
       />
     </SafeAreaView>
+  );
+}
+
+export default function App(){
+  const [loaded] = useFonts({
+    Inria: require('./assets/fonts/InriaSerif-Regular.ttf'),
+    InriaItalic: require('./assets/fonts/InriaSerif-LightItalic.ttf'),
+    InriaLight: require('./assets/fonts/InriaSerif-Light.ttf'),
+    InriaBoldI: require('./assets/fonts/InriaSerif-BoldItalic.ttf'),
+    InriaBold: require('./assets/fonts/InriaSerif-Bold.ttf'),
+  });
+
+  if (!loaded){
+    return null;
+  }
+
+  return(
+    <View style={{flex:1}}>
+      <Text style={{ fontFamily: 'Inria', fontSize: 27 }}>Inria</Text>
+    </View>
   );
 }
 
