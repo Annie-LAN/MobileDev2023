@@ -26,6 +26,12 @@ export default function App() {
         <Text style={styles.generate}>Generate</Text>
       </View>
       
+      <View>
+        <Text style={styles.filter}>filter     filter     filter     filter</Text>
+        <Text style={styles.filter}>filter     filter     filter     filter</Text>
+        <Text style={styles.filter}>filter     filter     filter     filter</Text>
+      </View>
+
       <FlatList 
         data={song}
         renderItem={({ index, item }) => (
@@ -54,11 +60,20 @@ const styles = StyleSheet.create({
   },
   generate:{
     marginTop: 30,
+    marginBottom: 30,
     justifyContent: 'center',
     padding: 8,
     fontSize: 25,
     color: "#000010",
     backgroundColor: "#FFE78F"
+  },
+  filter:{
+    marginTop: 10,
+    //marginBottom: 10,
+    justifyContent: 'center',
+    padding: 5,
+    fontSize: 20,
+    color: "#000010",
   }
 });
 
