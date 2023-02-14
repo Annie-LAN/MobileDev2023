@@ -7,58 +7,63 @@ import { useFonts } from 'expo-font';
 export default function App() {
   const[song, setSong] = useState([]);
 
+  const getSongs = (filters) => {
+    let url = "http://10.105.12.214:3000/random/?"
+    keys = filters ? Object.keys(filters) : []
+    for (let i=0; i < keys.length; i++) {
+      url += keys[i] + "=" + filters[keys[i]]
+    }
+    fetch(url).then((res) => {
+      res.json().then((data) => {
+        // console.log(data)
+        setSong(data)
+      })
+    }).catch(() => console.log("error"))
+  }
+
   useEffect(() => {
-    setSong([{name: "Party in the USA" , artist: "Miley Cyrus" , key: '1'},
-    {name: 'Bohemian Rhapsody' , artist: 'Queen' , key: '2' },
-    {name: 'Baby' , artist: 'Justin Bieber' , key: '3' }, 
-    {name: 'Rolling in the Deep', artist: 'Adele', key: '4' },
-    {name: 'Toxic', artist: 'Brittany Spears', key: '5'},
-    {name: 'Shirt', artist: 'SZA', key: '6'},
-    {name: 'Low', artist: 'SZA', key: '7' }, 
-    {name: 'Spins', artist: 'Mac Miller', key: '8'},
-    {name: 'Bad Habit', artist: 'Steve Lacy', key: '9'},
-    {name: 'Single Ladies', artist: 'Beyonce', key: '10'}])
+    getSongs()
   }, [])
 
   return (
     <SafeAreaView style={styles.container}>
 
       <View>
-        <Text style={styles.generate}>Generate</Text>
+        <Text onPress={getSongs} style={styles.generate}>Generate</Text>
       </View>
       
       <FlatList 
         data={song}
         renderItem={({ index, item }) => (
-          <Song song={item.name} artist={item.artist} index={index}/>
+          <Song song={item.title} artist={item.artis_name} index={index}/>
 
         )}
-      
+          keyExtractor={item => item.title}
       
       />
     </SafeAreaView>
   );
 }
 
-export default function App(){
-  const [loaded] = useFonts({
-    Inria: require('./assets/fonts/InriaSerif-Regular.ttf'),
-    InriaItalic: require('./assets/fonts/InriaSerif-LightItalic.ttf'),
-    InriaLight: require('./assets/fonts/InriaSerif-Light.ttf'),
-    InriaBoldI: require('./assets/fonts/InriaSerif-BoldItalic.ttf'),
-    InriaBold: require('./assets/fonts/InriaSerif-Bold.ttf'),
-  });
+// export default function App(){
+//   const [loaded] = useFonts({
+//     Inria: require('./assets/fonts/InriaSerif-Regular.ttf'),
+//     InriaItalic: require('./assets/fonts/InriaSerif-LightItalic.ttf'),
+//     InriaLight: require('./assets/fonts/InriaSerif-Light.ttf'),
+//     InriaBoldI: require('./assets/fonts/InriaSerif-BoldItalic.ttf'),
+//     InriaBold: require('./assets/fonts/InriaSerif-Bold.ttf'),
+//   });
 
-  if (!loaded){
-    return null;
-  }
+//   if (!loaded){
+//     return null;
+//   }
 
-  return(
-    <View style={{flex:1}}>
-      <Text style={{ fontFamily: 'Inria', fontSize: 27 }}>Inria</Text>
-    </View>
-  );
-}
+//   return(
+//     <View style={{flex:1}}>
+//       <Text style={{ fontFamily: 'Inria', fontSize: 27 }}>Inria</Text>
+//     </View>
+//   );
+// }
 
 const styles = StyleSheet.create({
   container: {

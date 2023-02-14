@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         color: "#80D1C8",
         lineHeight: 30,
+
     },
     artist: {
         marginTop: 3,
@@ -33,6 +34,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: "#000010",
         lineHeight: 20,
+
     },
     index: {
         fontSize: 50,
