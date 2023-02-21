@@ -3,14 +3,9 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 let Dropdown = ({items, holder}) => {
   
-    ////KEY////
       const [open, setOpen] = useState(false);
       const [value, setValue] = useState(null);
-      const [items, setItems] = useState([
-        {items}
-      ]);
-
-    }
+    
 
       return(
         <DropDownPicker
@@ -37,3 +32,5 @@ let Dropdown = ({items, holder}) => {
 
 
       )
+
+        }
