@@ -13,7 +13,7 @@ export default function App() {
     {name: 'Rolling in the Deep', artist: 'Adele', key: '4' },
     {name: 'Toxic', artist: 'Brittany Spears', key: '5'},
     {name: 'Shirt', artist: 'SZA', key: '6'},
-    {name: 'Low', artist: 'SZA', key: '7' }, 
+    {name: 'Low', artist: 'SZA', key: '7' },  
     {name: 'Spins', artist: 'Mac Miller', key: '8'},
     {name: 'Bad Habit', artist: 'Steve Lacy', key: '9'},
     {name: 'Single Ladies', artist: 'Beyonce', key: '10'}])
