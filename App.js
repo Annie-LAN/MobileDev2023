@@ -3,9 +3,37 @@ import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, Text, SafeAreaView, View, FlatList } from 'react-native';
 import Song from './components/song'
 import { useFonts } from 'expo-font';
+import DropDownPicker from 'react-native-dropdown-picker';
+
 
 export default function App() {
   const[song, setSong] = useState([]);
+
+  ////KEY////
+    const [open, setOpen] = useState(false);
+    const [value, setValue] = useState(null);
+    const [items, setItems] = useState([
+      {label: "N/A", value: null},
+      {label: 'A', value: '0'}, 
+      {label: 'A#', value: '1'}, 
+      {label: 'B', value: '2'}, 
+      {label: 'C', value: '3'}, 
+      {label: 'C#', value: '4'}, 
+      {label: 'D', value: '5'}, 
+      {label: 'D#', value: '6'}, 
+      {label: 'E', value: '7'}, 
+      {label: 'F', value: '8'}, 
+      {label: 'F#', value: '9'}, 
+      {label: 'G', value: '10'}, 
+      {label: 'G#', value: '11'}, 
+
+    ]);
+
+    ////MODE////
+
+      {label:"Major", value: 0}, 
+      {label:"Minor", value: 1}, 
+
 
   const getSongs = (filters) => {
     let url = "http://10.105.12.214:3000/random/?"
@@ -27,6 +55,28 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
+
+    <DropDownPicker
+      placeholderStyle={{
+        color: "grey",
+        fontWeight: "bold",
+        fontSize: 20,
+        padding: 5, 
+        marginLeft: 10
+      }}
+      dropDownContainerStyle={{
+        backgroundColor: "#dfdfdf",
+        fontSize: 20
+      }}
+      containerStyle={{width: 200}}
+      placeholder = "Select a Key"
+      open = {open}
+      value = {value}
+      items = {items}
+      setOpen = {setOpen}
+      setValue = {setValue}
+      setItems = {setItems}
+    />
 
       <View>
         <Text onPress={getSongs} style={styles.generate}>Generate</Text>
