@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text } from 'react-native';
-import Picker from 'react-native-picker';
+import { Picker } from '@react-native-picker/picker';
 
 const DropdownMenu = ({ options, selectedValue, onValueChange, label }) => {
   return (
