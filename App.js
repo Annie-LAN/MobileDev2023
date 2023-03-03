@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { Button, StyleSheet, Text, SafeAreaView, View, FlatList } from 'react-native';
+import { Button, StyleSheet, Text, SafeAreaView, View, FlatList, TextInput} from 'react-native';
 import Song from './components/song'
 import Dropdown from './components/song'
 import DropdownMenu from './components/dropdownMenu';
+import {KeyboardTrackingView, KeyboardAwareInsetsView, KeyboardRegistry, KeyboardAccessoryView, KeyboardUtils} from 'react-native-ui-lib/keyboard';
 
 
 export default function App() {
@@ -12,6 +13,10 @@ export default function App() {
   const [key, setKey] = useState('');
   const [mode, setMode] = useState('');
   const [timeSig, setTimeSig] = useState('');
+
+  const [artistName, setArtistName] = useState('');
+  const [title, setTitle] = useState('');
+  const [release, setRelease] = useState('');
 
   const keyOptions = [
     {label: "N/A", value: null},
@@ -72,6 +77,36 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
 
+      {/* <View flex paddingH-25 paddingT-120>
+        <Text blue50 text20>Welcome</Text>
+        <TextField text50 placeholder="username" grey10/>
+        <TextField text50 placeholder="password" secureTextEntry grey10/>
+        <View marginT-100 center>
+          <Button text70 white background-orange30 label="Login"/>
+          <Button link text70 orange30 label="Sign Up" marginT-20/>
+        </View>
+      </View> */}
+      <TextInput
+        style={styles.textInput}
+        placeholder="Search by artist name"
+        value={artistName}
+        onChangeText={text => setArtistName(text)}
+      />
+
+      <TextInput
+        style={styles.textInput}
+        placeholder="Search by title"
+        value={title}
+        onChangeText={text => setTitle(text)}
+      />
+
+      <TextInput
+        style={styles.textInput}
+        placeholder="Search by release"
+        value={release}
+        onChangeText={text => setRelease(text)}
+      />
+
       <DropdownMenu
         label = "Select a Key"
         options = {keyOptions}
@@ -124,6 +159,13 @@ const styles = StyleSheet.create({
     padding: 30,
     backgroundColor: 'green',
     fontSize: 24
+  },
+  textInput: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    margin: 10,
+    padding: 5,
   },
   generate:{
     marginTop: 30,
