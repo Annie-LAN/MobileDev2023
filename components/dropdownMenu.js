@@ -10,7 +10,6 @@ const DropdownMenu = ({ items, value, setValue, setItems, placeholder }) => {
   return (
     <View>
       {/* <Text style={styles.label}>{label}</Text> */}
-   
       <DropDownPicker
         open = {open}
         value = {value}
