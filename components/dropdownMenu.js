@@ -1,21 +1,44 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
-import Picker from 'react-native-picker';
+import { View, Text, StyleSheet } from 'react-native';
+import DropDownPicker from 'react-native-dropdown-picker';
 
-const DropdownMenu = ({ options, selectedValue, onValueChange, label }) => {
+
+
+const DropdownMenu = ({ items, value, setValue, setItems, placeholder }) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <View>
-      <Text>{label}</Text>
-      <Picker
-        selectedValue={selectedValue}
-        onValueChange={onValueChange}
-      >
-        {options.map((option, index) => (
-          <Picker.Item key={index} label={option.label} value={option.value} />
-        ))}
-      </Picker>
+      {/* <Text style={styles.label}>{label}</Text> */}
+   
+      <DropDownPicker
+        open = {open}
+        value = {value}
+        items = {items}
+        setOpen = {setOpen}
+        setValue = {setValue} 
+        setItems = {setItems} 
+        placeholder = {placeholder}    
+      />
+
     </View>
   );
 };
 
 export default DropdownMenu;
+
+
+// const styles = StyleSheet.create({
+//   label: {
+//     top: 50,
+//     padding: 10,
+//     backgroundColor: 'white',
+//     fontSize: 20
+//   },
+//   container: {
+//     flex: 1,
+//     paddingTop: 40,
+//     alignItems: "center"
+//   }
+  
+// });
