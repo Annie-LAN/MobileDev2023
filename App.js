@@ -72,8 +72,18 @@ export default function App() {
   }
 
   useEffect(() => {
-    getSongs()
-  }, [])
+    let filters = {};
+    if (artistName !== '') {
+      filters['artist_name'] = artistName;
+    }
+    if (title !== '') {
+      filters['title'] = title;
+    }
+    if (release !== '') {
+      filters['release'] = release;
+    }
+    getSongs(filters);
+  }, [artistName, title, release]);
 
   return (
     <SafeAreaView style={styles.container}>
