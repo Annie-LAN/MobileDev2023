@@ -53,7 +53,7 @@ export default function App() {
 
   const getSongs = (filters) => {
     let url = "http://10.105.12.214:3000/random/?"
-    keys = filters ? Object.keys(filters) : []
+    let keys = filters ? Object.keys(filters) : []
     for (let i=0; i < keys.length; i++) {
       url += keys[i] + "=" + filters[keys[i]]
     }
