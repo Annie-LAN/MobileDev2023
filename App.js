@@ -4,6 +4,7 @@ import { Button, StyleSheet, Text, SafeAreaView, View, FlatList } from 'react-na
 import Song from './components/song'
 import Dropdown from './components/song'
 import DropdownMenu from './components/dropdownMenu';
+import MinMaxInput from './components/minMaxInput';
 
 
 export default function App() {
@@ -46,9 +47,45 @@ export default function App() {
 
   ]
 
-  // const handleValueChange = (value) => {
-  //   setSelectedValue(value);
-  // }
+  //tempo//
+  const [minTemp, setMinTemp] = useState(null);
+  const handleMinTempoChange = (newVal) => {
+    setMinTemp(newVal);
+  };
+  const [maxTemp, setMaxTemp] = useState(null);
+  const handleMaxTempoChange = (newVal) => {
+    setMaxTemp(newVal);
+  };
+
+  //year//
+  const [minYear, setMinYear] = useState(null);
+  const handleMinYearChange = (newVal) => {
+    setMinYear(newVal);
+  };
+  const [maxYear, setMaxYear] = useState(null);
+  const handleMaxYearChange = (newVal) => {
+    setMaxYear(newVal);
+  };
+
+  //duration//
+  const [minLen, setMinLen] = useState(null);
+  const handleMinLenChange = (newVal) => {
+    setMinLen(newVal);
+  };
+  const [maxLen, setMaxLen] = useState(null);
+  const handleMaxLenChange = (newVal) => {
+    setMaxLen(newVal);
+  };
+
+  //loudness//
+  const [minLoud, setMinLoud] = useState(null);
+  const handleMinLoudChange = (newVal) => {
+    setMinLoud(newVal);
+  };
+  const [maxLoud, setMaxLoud] = useState(null);
+  const handleMaxLoudChange = (newVal) => {
+    setMaxLoud(newVal);
+  };
 
 
   const getSongs = (filters) => {
@@ -72,8 +109,51 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
 
+      <MinMaxInput 
+        placeholder = "Min Tempo (bpm)"
+        onChangeText= {handleMinTempoChange}
+      />
+
+      <MinMaxInput 
+        placeholder = "Max Tempo (bpm)"
+        onChangeText= {handleMaxTempoChange}
+      />
+
+      <MinMaxInput 
+        placeholder = "Min Year"
+        onChangeText= {handleMinYearChange}
+      />
+
+      <MinMaxInput 
+        placeholder = "Max Year"
+        onChangeText= {handleMaxYearChange}
+      />
+
+      <MinMaxInput 
+        placeholder = "Min Duration"
+        onChangeText= {handleMinLenChange}
+      />  
+      <MinMaxInput 
+        placeholder = "Max Duration"
+        onChangeText= {handleMaxLenChange}
+      />  
+
+      <MinMaxInput 
+        placeholder = "Min Loudness"
+        onChangeText= {handleMinLoudChange}
+      />  
+
+      <MinMaxInput 
+        placeholder = "Max Loudness"
+        onChangeText= {handleMaxLoudChange}
+      />  
+
+
+
+
+
+      {/* DROPDOWNS */}
       <DropdownMenu
-    
         value = {key}
         items = {keyOptions}
         setValue = {setKey}
