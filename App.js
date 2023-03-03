@@ -10,15 +10,16 @@ import {KeyboardTrackingView, KeyboardAwareInsetsView, KeyboardRegistry, Keyboar
 export default function App() {
   const[song, setSong] = useState([]);
 
-  const [key, setKey] = useState('');
-  const [mode, setMode] = useState('');
-  const [timeSig, setTimeSig] = useState('');
+  const [key, setKey] = useState(null);
+  const [mode, setMode] = useState(null);
+  const [timeSig, setTimeSig] = useState(null);
 
   const [artistName, setArtistName] = useState('');
   const [title, setTitle] = useState('');
   const [release, setRelease] = useState('');
 
-  const keyOptions = [
+
+  const [keyOptions, setKeyOptions] = useState([
     {label: "N/A", value: null},
     {label: 'A', value: '0'}, 
     {label: 'A#', value: '1'}, 
@@ -32,7 +33,7 @@ export default function App() {
     {label: 'F#', value: '9'}, 
     {label: 'G', value: '10'}, 
     {label: 'G#', value: '11'}, 
-  ];
+  ]);
 
   const modeOptions = [
     {label: "N/A", value: null},
@@ -108,25 +109,28 @@ export default function App() {
       />
 
       <DropdownMenu
-        label = "Select a Key"
-        options = {keyOptions}
-        selectedValue = {key}
-        onValueChange = {(itemValue, itemIndex) => setKey(null)}
+    
+        value = {key}
+        items = {keyOptions}
+        setValue = {setKey}
+        setItems = {setKeyOptions}
+        placeholder = "Select a Key"
+
       /> 
 
-      <DropdownMenu
+      {/* <DropdownMenu
         label = "Select a Mode"
         options = {modeOptions}
         selectedValue = {mode}
-        onValueChange = {(itemValue, itemIndex) => setMode(null)}
+        onValueChange = {(itemValue, itemIndex) => setMode(itemValue)}
       /> 
 
       <DropdownMenu
         label = "Select a Time Signature"
         options = {timeSigOptions}
         selectedValue = {timeSig}
-        onValueChange = {(itemValue, itemIndex) => setTimeSig(null)}
-      /> 
+        onValueChange = {(itemValue, itemIndex) => setTimeSig(itemValue)}
+      />  */}
 
       <View>
         <Text onPress={getSongs} style={styles.generate}>Generate</Text>
