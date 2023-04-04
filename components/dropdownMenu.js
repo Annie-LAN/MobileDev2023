@@ -17,7 +17,8 @@ const DropdownMenu = ({ items, value, setValue, setItems, placeholder }) => {
         setOpen = {setOpen}
         setValue = {setValue} 
         setItems = {setItems} 
-        placeholder = {placeholder}    
+        placeholder = {placeholder}
+        listMode="SCROLLVIEW"    
       />
 
     </View>

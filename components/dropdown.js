@@ -28,6 +28,7 @@ let Dropdown = ({items, holder}) => {
             setOpen = {setOpen}
             setValue = {setValue}
             setItems = {setItems}
+
         />
 
 

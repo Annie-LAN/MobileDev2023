@@ -124,6 +124,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={{width: '50%'}}>
 
       {/* <View flex paddingH-25 paddingT-120>
         <Text blue50 text20>Welcome</Text>
@@ -285,8 +286,10 @@ export default function App() {
       <View>
         <Text onPress={getSongs} style={styles.generate}>Generate</Text>
       </View>
+
+      {song.map((item, index) =>  <Song song={item.title} artist={item.artis_name} index={index} key={item.title}/>)}
       
-      <FlatList 
+      {/* <FlatList 
         data={song}
         renderItem={({ index, item }) => (
           <Song song={item.title} artist={item.artis_name} index={index}/>
@@ -294,7 +297,8 @@ export default function App() {
         )}
           keyExtractor={item => item.title}
       
-      />
+      /> */}
+      </ScrollView>
     </SafeAreaView>
   );
 }
