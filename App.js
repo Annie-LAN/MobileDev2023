@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { Button, StyleSheet, Text, SafeAreaView, View, FlatList, TextInput} from 'react-native';
+import { Button, StyleSheet, Text, SafeAreaView, View, FlatList, TextInput, ScrollView} from 'react-native';
 import Song from './components/song'
 import Dropdown from './components/song'
 import DropdownMenu from './components/dropdownMenu';
@@ -123,7 +123,7 @@ export default function App() {
   }, [artistName, title, release]);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container} style={{borderWidth: 1}}>
 
       {/* <View flex paddingH-25 paddingT-120>
         <Text blue50 text20>Welcome</Text>
@@ -135,21 +135,21 @@ export default function App() {
         </View>
       </View> */}
       <TextInput
-        style={styles.textInput}
+        contentContainerStyle={styles.textInput}
         placeholder="Search by artist name"
         value={artistName}
         onChangeText={text => setArtistName(text)}
       />
 
       <TextInput
-        style={styles.textInput}
+        contentContainerStyle={styles.textInput}
         placeholder="Search by title"
         value={title}
         onChangeText={text => setTitle(text)}
       />
 
       <TextInput
-        style={styles.textInput}
+        contentContainerStyle={styles.textInput}
         placeholder="Search by release"
         value={release}
         onChangeText={text => setRelease(text)}
@@ -165,21 +165,21 @@ export default function App() {
         </View>
       </View> */}
       <TextInput
-        style={styles.textInput}
+        contentContainerStyle={styles.textInput}
         placeholder="Search by artist name"
         value={artistName}
         onChangeText={text => setArtistName(text)}
       />
 
       <TextInput
-        style={styles.textInput}
+        contentContainerStyle={styles.textInput}
         placeholder="Search by title"
         value={title}
         onChangeText={text => setTitle(text)}
       />
 
       <TextInput
-        style={styles.textInput}
+        contentContainerStyle={styles.textInput}
         placeholder="Search by release"
         value={release}
         onChangeText={text => setRelease(text)}
@@ -195,21 +195,21 @@ export default function App() {
         </View>
       </View> */}
       <TextInput
-        style={styles.textInput}
+        contentContainerStyle={styles.textInput}
         placeholder="Search by artist name"
         value={artistName}
         onChangeText={text => setArtistName(text)}
       />
 
       <TextInput
-        style={styles.textInput}
+        contentContainerStyle={styles.textInput}
         placeholder="Search by title"
         value={title}
         onChangeText={text => setTitle(text)}
       />
 
       <TextInput
-        style={styles.textInput}
+        contentContainerStyle={styles.textInput}
         placeholder="Search by release"
         value={release}
         onChangeText={text => setRelease(text)}
@@ -283,7 +283,7 @@ export default function App() {
       />  */}
 
       <View>
-        <Text onPress={getSongs} style={styles.generate}>Generate</Text>
+        <Text onPress={getSongs} contentContainerStyle={styles.generate}>Generate</Text>
       </View>
       
       <FlatList 
@@ -295,7 +295,7 @@ export default function App() {
           keyExtractor={item => item.title}
       
       />
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
@@ -304,6 +304,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    borderWidth: 1,
+    borderColor: 'gray',
     backgroundColor: '#FFD4A9',
     alignItems: 'center',
     justifyContent: 'center',
