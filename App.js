@@ -165,56 +165,6 @@ export default function App() {
           <Button link text70 orange30 label="Sign Up" marginT-20/>
         </View>
       </View> */}
-      <TextInput
-        style={styles.textInput}
-        placeholder="Search by artist name"
-        value={artistName}
-        onChangeText={text => setArtistName(text)}
-      />
-
-      <TextInput
-        style={styles.textInput}
-        placeholder="Search by title"
-        value={title}
-        onChangeText={text => setTitle(text)}
-      />
-
-      <TextInput
-        style={styles.textInput}
-        placeholder="Search by release"
-        value={release}
-        onChangeText={text => setRelease(text)}
-      />
-
-      {/* <View flex paddingH-25 paddingT-120>
-        <Text blue50 text20>Welcome</Text>
-        <TextField text50 placeholder="username" grey10/>
-        <TextField text50 placeholder="password" secureTextEntry grey10/>
-        <View marginT-100 center>
-          <Button text70 white background-orange30 label="Login"/>
-          <Button link text70 orange30 label="Sign Up" marginT-20/>
-        </View>
-      </View> */}
-      <TextInput
-        style={styles.textInput}
-        placeholder="Search by artist name"
-        value={artistName}
-        onChangeText={text => setArtistName(text)}
-      />
-
-      <TextInput
-        style={styles.textInput}
-        placeholder="Search by title"
-        value={title}
-        onChangeText={text => setTitle(text)}
-      />
-
-      <TextInput
-        style={styles.textInput}
-        placeholder="Search by release"
-        value={release}
-        onChangeText={text => setRelease(text)}
-      />
 
       <MinMaxInput 
         placeholder = "Min Tempo (bpm)"
