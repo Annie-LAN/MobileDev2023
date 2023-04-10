@@ -95,7 +95,7 @@ export default function App() {
 
 
   const getSongs = (filters) => {
-    let url = "http://10.105.12.214:3000/random/?"
+    let url = "http://10.47.121.2021:3000/random/?"
     let keys = filters ? Object.keys(filters) : []
     for (let i=0; i < keys.length; i++) {
       url += keys[i] + "=" + filters[keys[i]]
@@ -295,6 +295,7 @@ export default function App() {
           <Song song={item.title} artist={item.artis_name} index={index}/>
 
         )}
+
           keyExtractor={item => item.title}
       
       /> */}
