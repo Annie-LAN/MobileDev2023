@@ -36,13 +36,13 @@ export default function App() {
     {label: 'G#', value: '11'}, 
   ]);
 
-  const modeOptions = [
+  const [modeOptions, setModeOptions] = useState([
     {label: "N/A", value: null},
     {label:"Major", value: 0}, 
     {label:"Minor", value: 1},
-  ];
+  ]);
 
-  const timeSigOptions = [
+  const [timeSigOptions, setTimeSigOptions] = useState([
     {label: "N/A", value: null},
     {label:"0", value: 0}, 
     {label:"1", value: 1},
@@ -51,7 +51,7 @@ export default function App() {
     {label:"5", value: 4},
     {label: "7", value: 5}
 
-  ]
+  ]);
 
   //tempo//
   const [minTemp, setMinTemp] = useState(null);
@@ -216,6 +216,23 @@ export default function App() {
         setValue = {setKey}
         setItems = {setKeyOptions}
         placeholder = "Select a Key"
+
+      /> 
+
+      <DropdownMenu
+        value = {mode}
+        items = {modeOptions}
+        setValue = {setMode}
+        setItems = {setModeOptions}
+        placeholder = "Select a Mode"
+      /> 
+
+      <DropdownMenu
+        value = {timeSig}
+        items = {timeSigOptions}
+        setValue = {setTimeSig}
+        setItems = {setTimeSigOptions}
+        placeholder = "Select a Time Signature"
 
       /> 
 

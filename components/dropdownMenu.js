@@ -8,7 +8,7 @@ const DropdownMenu = ({ items, value, setValue, setItems, placeholder }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <View>
+    <View style={{zIndex: 999}}>
       {/* <Text style={styles.label}>{label}</Text> */}
       <DropDownPicker
         open = {open}
