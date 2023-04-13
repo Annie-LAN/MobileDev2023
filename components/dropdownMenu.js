@@ -4,11 +4,11 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 
 
-const DropdownMenu = ({ items, value, setValue, setItems, placeholder }) => {
+const DropdownMenu = ({ items, value, setValue, setItems, placeholder, z }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <View style={{zIndex: 999}}>
+    <View style={{zIndex: z}}>
       {/* <Text style={styles.label}>{label}</Text> */}
       <DropDownPicker
         open = {open}
@@ -18,7 +18,8 @@ const DropdownMenu = ({ items, value, setValue, setItems, placeholder }) => {
         setValue = {setValue} 
         setItems = {setItems} 
         placeholder = {placeholder}
-        listMode="SCROLLVIEW"    
+        listMode="SCROLLVIEW" 
+        
       />
 
     </View>

@@ -216,6 +216,7 @@ export default function App() {
         setValue = {setKey}
         setItems = {setKeyOptions}
         placeholder = "Select a Key"
+        z={100}
 
       /> 
 
@@ -225,6 +226,7 @@ export default function App() {
         setValue = {setMode}
         setItems = {setModeOptions}
         placeholder = "Select a Mode"
+        z={99}
       /> 
 
       <DropdownMenu
@@ -233,7 +235,7 @@ export default function App() {
         setValue = {setTimeSig}
         setItems = {setTimeSigOptions}
         placeholder = "Select a Time Signature"
-
+        z={98}
       /> 
 
       {/* <DropdownMenu
