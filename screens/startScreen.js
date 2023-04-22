@@ -1,6 +1,6 @@
-import { StyleSheet, Button, View, Dimensions } from "react-native";
+import { StyleSheet, ImageBackground, Button, View, Dimensions, Image } from "react-native";
 import { StatusBar } from 'expo-status-bar';
-import Svg, { Image } from "react-native-svg";
+import Svg, { Image as SvgImage } from "react-native-svg";
 import { useEffect, useState } from "react";
 
 export default function StartScreen({ navigation }) {
@@ -8,7 +8,10 @@ export default function StartScreen({ navigation }) {
     const styles = StyleSheet.create({
         container: {
           flex: 1,
-          justifyContent: 'flex-end'
+        },
+        background: {
+            flex: 1,
+            justifyContent: 'center'
         },
         button: {
             backgroundColor: 'white',
@@ -37,21 +40,14 @@ export default function StartScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <View style={StyleSheet.absoluteFill}>
-                <Svg height = {height} width = {width}>
-                    <Image
-                        href={require("./start.jpg")}
-                        width = {width}
-                        height = {height}
-                        preserveAspectRatio = "xMidYMid slice"/>
-                </Svg>
-            </View>
-            <View>
-                <Image source={require("./logo_transparent.png")} ></Image>
-                <Button style={styles.button}
-                    title="Let's Swirl!"
-                    onPress={() => navigation.navigate("Filter")}/>
-            </View>
+            <ImageBackground source={require("./start.jpg")} resizeMode="cover" style={styles.background}>
+                <View style={{alignItems: 'center'}}>
+                    <Image source={require("./logo_transparent.png")} style={{height: 200, aspectRatio: 1, marginBottom: 40}} />
+                    <Button style={styles.button}
+                        title="Let's Swirl!"
+                        onPress={() => navigation.navigate("Filter")}/>
+                </View>
+            </ImageBackground>
         </View>
     );
 }
