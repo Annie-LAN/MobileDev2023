@@ -8,7 +8,7 @@ import {KeyboardTrackingView, KeyboardAwareInsetsView, KeyboardRegistry, Keyboar
 import MinMaxInput from './components/minMaxInput';
 
 
-export default function App() {
+export default function FilterScreen() {
   const[song, setSong] = useState([]);
 
   const [key, setKey] = useState(null);

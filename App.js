@@ -1,7 +1,8 @@
-import startScreen from "./screens/startScreen";
-import filterScreen from "./screens/filterScreen";
+import StartScreen from "./screens/startScreen";
+import FilterScreen from "./screens/filterScreen";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Text } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,12 +12,12 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen 
           name="Start"
-          component={startScreen}
+          component={StartScreen}
           options={{title: "Welcome"}}
         />
         <Stack.Screen 
           name="Filter"
-          component={filterScreen}
+          component={FilterScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
