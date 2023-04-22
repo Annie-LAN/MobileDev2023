@@ -44,7 +44,7 @@ export default function StartScreen({ navigation }) {
         <View style={styles.container}>
             <ImageBackground source={require("./start.jpg")} resizeMode="cover" style={styles.background}>
                 <View style={{alignItems: 'center'}}>
-                    <Image source={require("./logo_transparent.png")} style={{height: 200, aspectRatio: 1, marginBottom: 40}} />
+                    <Image source={require("./logo_transparent.png")} style={{height: 200, aspectRatio: 1, marginBottom: 175}} />
                     <Button style={styles.button}
                         title="Let's Swirl!"
                         onPress={() => navigation.navigate("Filter")}/>
