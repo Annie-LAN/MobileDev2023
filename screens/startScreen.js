@@ -37,14 +37,6 @@ export default function StartScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Svg>
-                <Image
-                    href={require("./logo_transparent.png")}
-                    width = {width}
-                    height = {height}
-                    preserveAspectRatio = "xMidYMid slice" 
-                    />
-            </Svg>
             <View style={StyleSheet.absoluteFill}>
                 <Svg height = {height} width = {width}>
                     <Image
@@ -55,6 +47,7 @@ export default function StartScreen({ navigation }) {
                 </Svg>
             </View>
             <View>
+                <Image source={require("./logo_transparent.png")} ></Image>
                 <Button style={styles.button}
                     title="Let's Swirl!"
                     onPress={() => navigation.navigate("Filter")}/>
