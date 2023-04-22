@@ -292,7 +292,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
-    margin: 10,
+    margin: 5,
     padding: 5,
   },
   generate:{
@@ -300,9 +300,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 8,
+    fontFamily: "Optima",
     fontSize: 25,
     color: "#000010",
-    backgroundColor: "#FFE78F"
+    backgroundColor: "#FFE78F",
+    textAlign: 'center'
   }
 });
 

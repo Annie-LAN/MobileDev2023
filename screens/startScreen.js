@@ -9,6 +9,7 @@ export default function StartScreen({ navigation }) {
         container: {
           flex: 1,
           justifyContent: 'flex-end'
+        
         },
         button: {
             backgroundColor: 'white',
@@ -25,11 +26,13 @@ export default function StartScreen({ navigation }) {
             fontSize: 20,
             fontWeight: '600',
             color: 'black',
-            letterSpacing: 0.5
+            letterSpacing: 0.5, 
+            fontFamily: "Optima",
         },
         buttonContainer: {
             justifyContent: 'center',
-            height: height / 3
+            height: height / 3,
+            
         }
     });
 

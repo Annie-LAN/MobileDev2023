@@ -20,12 +20,14 @@ const styles = StyleSheet.create({
         padding: 20,
         flexDirection: "row",
         alignItems: "center", 
+        fontFamily: "Optima",
     },
     title: {
         marginLeft: 30,
         fontSize: 30,
         color: "#80D1C8",
         lineHeight: 30,
+        fontFamily: "Optima",
 
     },
     artist: {
@@ -34,6 +36,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: "#000010",
         lineHeight: 20,
+        fontFamily: "Optima",
 
     },
     index: {
