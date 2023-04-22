@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextInput } from 'react-native';
+import { TextInput, StyleSheet } from 'react-native';
 
 const minMaxInput = (props) => {
   const [text, setText] = useState('');
@@ -22,3 +22,13 @@ const minMaxInput = (props) => {
 };
 
 export default minMaxInput;
+
+const styles = StyleSheet.create({
+  boxes: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: 'gray',
+    backgroundColor: '#FFD4A9',
+    alignItems: 'center',
+    justifyContent: 'center',
+  } });

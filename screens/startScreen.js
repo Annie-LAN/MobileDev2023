@@ -37,6 +37,14 @@ export default function StartScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
+            <Svg>
+                <Image
+                    href={require("./logo_transparent.png")}
+                    width = {width}
+                    height = {height}
+                    preserveAspectRatio = "xMidYMid slice" 
+                    />
+            </Svg>
             <View style={StyleSheet.absoluteFill}>
                 <Svg height = {height} width = {width}>
                     <Image

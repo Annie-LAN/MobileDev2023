@@ -157,40 +157,48 @@ export default function FilterScreen() {
       />
 
       <MinMaxInput 
+        style={styles.textInput}
         placeholder = "Min Tempo (bpm)"
         onChangeText= {handleMinTempoChange}
       />
 
       <MinMaxInput 
+        style={styles.textInput}
         placeholder = "Max Tempo (bpm)"
         onChangeText= {handleMaxTempoChange}
       />
 
       <MinMaxInput 
+        style={styles.textInput}
         placeholder = "Min Year"
         onChangeText= {handleMinYearChange}
       />
 
       <MinMaxInput 
+        style={styles.textInput}
         placeholder = "Max Year"
         onChangeText= {handleMaxYearChange}
       />
 
       <MinMaxInput 
+        style={styles.textInput}
         placeholder = "Min Duration"
         onChangeText= {handleMinLenChange}
       />  
       <MinMaxInput 
+        style={styles.textInput}
         placeholder = "Max Duration"
         onChangeText= {handleMaxLenChange}
       />  
 
       <MinMaxInput 
+        style={styles.textInput}
         placeholder = "Min Loudness"
         onChangeText= {handleMinLoudChange}
       />  
 
       <MinMaxInput 
+        style={styles.textInput}
         placeholder = "Max Loudness"
         onChangeText= {handleMaxLoudChange}
       />  
